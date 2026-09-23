@@ -1,0 +1,9 @@
+/* Basic PWA styling */
+body {
+    padding-top: 70px; /* Height of header */
+    padding-bottom: 70px; /* Height of footer */
+}
+
+.container {
+    max-width: 600px; /* Mobile first focus */
+}

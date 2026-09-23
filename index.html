@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Deals</title>
+    <!-- Link to Tailwind CSS for quick styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e40af">
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-blue-800 text-white p-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Local Deals: Main St</h1>
+        </div>
+    </header>
+
+    <!-- Main Coupon Container -->
+    <main class="container mx-auto p-4 pb-20">
+        <div id="coupon-feed" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- JS will populate coupon cards here -->
+        </div>
+    </main>
+
+    <!-- Simple Footer Nav -->
+    <footer class="fixed bottom-0 left-0 w-full bg-white border-t p-4 flex justify-around shadow-inner">
+        <button class="text-blue-800 font-semibold">Deals</button>
+        <button id="add-btn" class="text-gray-600">Add Biz (Admin)</button>
+    </footer>
+
+    <!-- Add Business Modal (Hidden by default) -->
+    <div id="add-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-[100]">
+        <div class="bg-white p-6 rounded-lg w-11/12 md:w-1/3 relative">
+            <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">X</button>
+            <h2 class="text-xl font-bold mb-4">Add New Deal</h2>
+            <input type="text" id="biz-name" placeholder="Business Name" class="w-full p-2 border rounded mb-2">
+            <input type="text" id="biz-offer" placeholder="Offer (e.g., 15% off)" class="w-full p-2 border rounded mb-2">
+            <input type="text" id="biz-details" placeholder="Details (e.g., Exp Oct 31)" class="w-full p-2 border rounded mb-4">
+            <button id="save-coupon" class="w-full bg-blue-800 text-white p-2 rounded hover:bg-blue-700">Save Deal</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <!-- Register Service Worker for PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(reg => {
+                    console.log('SW registered:', reg);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
