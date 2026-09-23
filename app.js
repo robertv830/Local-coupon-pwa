@@ -3,15 +3,15 @@ const coupons = [
     {
         id: 1,
         logo: '☕',
-        name: 'The Coffee Spot',
+        name: 'The Hot Chocolate Spot',
         offer: '15% OFF!',
-        details: 'Any Latte or Pastry. Valid until Nov 30.',
+        details: 'Any Hot Chocolate or Pastry. Valid until Nov 30.',
         color: 'bg-blue-600'
     },
     {
         id: 2,
         logo: '🌮',
-        name: 'Tacos & Tequila',
+        name: 'Tacos & More',
         offer: 'BUY 2 TACOS, GET 1 FREE',
         details: 'Tuesdays Only. Mention this ad.',
         color: 'bg-green-600'
